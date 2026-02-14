@@ -1,47 +1,13 @@
-<script>
-const params = new URLSearchParams(window.location.search);
-const slug = params.get("anime");
-
-if (!slug) {
-  document.body.innerHTML = "<h2 style='color:white'>No se especificó anime.</h2>";
-}
-
-const jsonURL = `https://raw.githubusercontent.com/colla06/data-animes/main/animes/${slug}.json`;
-
-fetch(jsonURL)
-  .then(res => res.json())
-  .then(data => {
-    renderPaste(data);
-  })
-  .catch(() => {
-    document.getElementById("episodes-container").innerHTML =
-      "<div style='color:#ff6b6b'>No se pudo cargar el JSON.</div>";
-  });
-
-function renderPaste(data) {
-
-  document.getElementById("anime-title").innerText = data.title;
-  document.getElementById("vip-btn").href = data.vip_folder;
-
-  if (!data.free || data.free.length === 0) {
-    document.getElementById("episodes-container").innerHTML =
-      "<div style='color:#ff6b6b'>No hay episodios FREE definidos.</div>";
-    return;
+{
+  "title": "Nombre del contenido",
+  "cover": "https://example.com/cover.jpg",
+  "meta": { "quality": "1080p", "format": "MKV", "audio": "JP" },
+  "vip": { "label": "VIP (Carpeta completa)", "url": "https://example.com/vip/" },
+  "free": {
+    "label": "FREE (Capítulos)",
+    "episodes": [
+      { "n": 1, "url": "https://example.com/ep-1" },
+      { "n": 2, "url": "https://example.com/ep-2" }
+    ]
   }
-
-  let html = "";
-
-  data.free.forEach(ep => {
-    html += `
-      <div class="episode-row">
-        <div class="ep-num">Ep ${ep.ep}</div>
-        <div class="ep-actions">
-          <a href="${ep.url}" target="_blank" class="btn-download">Descargar</a>
-        </div>
-      </div>
-    `;
-  });
-
-  document.getElementById("episodes-container").innerHTML = html;
 }
-</script>

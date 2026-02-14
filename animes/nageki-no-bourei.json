@@ -1,15 +1,8 @@
 {
-  "title": "Nageki No Bourei Wa Intai Shitai",
-  "vip": {
-    "label": "VIP (Carpeta completa)",
-    "url": "https://ddl.aysdo.xyz/FHD/Nageki%20no%20Bourei%20wa%20Intai%20shitai/Temporada%201"
-  },
-  "free": {
-    "label": "FREE (Capítulos)",
-    "episodes": [
-      { "n": 1, "url": "https://ddl.aysdo.xyz/d/FHD/Nageki%20no%20Bourei%20wa%20Intai%20shitai/Temporada%201/%5BAySDO%5D%20Nageki%20no%20Bourei%20wa%20Intai%20shitai%20-%2001%20%5BBD%201080p%20AV1%5D.mkv?sign=sT_up2bKu1sv4E-kOkAGPbFflEjcJXSX2sTzilGz4KQ=:0" },
-      { "n": 2, "url": "https://tu-link-ep-2.com" }
-    ]
-  }
+  "title": "Nageki no Bourei wa Intai Shitai",
+  "vip_folder": "https://ddl.aysdo.xyz/FHD/Nageki%20no%20Bourei%20wa%20Intai%20shitai/Temporada%201",
+  "free": [
+    { "ep": 1, "label": "Episodio 01", "url": "https://ddl.aysdo.xyz/d/FHD/Nageki%20no%20Bourei%20wa%20Intai%20shitai/Temporada%201/%5BAySDO%5D%20Nageki%20no%20Bourei%20wa%20Intai%20shitai%20-%2001%20%5BBD%201080p%20AV1%5D.mkv?sign=sT_up2bKu1sv4E-kOkAGPbFflEjcJXSX2sTzilGz4KQ=:0" },
+    { "ep": 2, "label": "Episodio 02", "url": "https://TU-ACORTADOR.com/yyyyy" }
+  ]
 }
-

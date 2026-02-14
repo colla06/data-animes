@@ -1,36 +1,47 @@
-{
-  "slug": "nageki-no-bourei",
-  "title": "Nageki no Bourei wa Intai Shitai",
-  "alt_title": "Let This Grieving Soul Retire",
-  "poster": "https://blogger.googleusercontent.com/img/a/AVvXsEjJRyeMOAFFHoKM1EpnorDk4e1ou9r6ViKsqykEQfaR4KAgSwHq6lqAwivAb5Fu6mA_QxanWetfJcc60uyMEY3tntOkD-vUIMHAMenU02FmPZdfMFPn77MMlb0DqbrpnDH9vpuYHzkAjvhVaRpDp9YsavPLmv4ZCrH-4TO-2KeLFZENMVqIvypnPanYxG8=s650",
-  "badges": ["BDRip", "1080p", "AV1"],
-  "info": {
-    "season": "Temporada 1",
-    "episodes_total": 13,
-    "audio": "Japonés",
-    "subs": "Español (Latino)",
-    "container": "MKV",
-    "codec": "AV1",
-    "resolution": "1920x1080",
-    "approx_size": "400MB aprox.",
-    "server": "DDL",
-    "password": "animeyseriesdo"
-  },
-  "vip": {
-    "cta_text": "⭐ ACCESO VIP ⭐",
-    "vip_page": "https://www.aysdo.xyz/p/vip.html",
-    "vip_folder": "https://ddl.aysdo.xyz/FHD/Nageki%20no%20Bourei%20wa%20Intai%20shitai/Temporada%201"
-  },
-  "free": [
-    {
-      "ep": 1,
-      "label": "Episodio 01",
-      "url": "https://ddl.aysdo.xyz/d/FHD/Nageki%20no%20Bourei%20wa%20Intai%20shitai/Temporada%201/%5BAySDO%5D%20Nageki%20no%20Bourei%20wa%20Intai%20shitai%20-%2001%20%5BBD%201080p%20AV1%5D.mkv?sign=sT_up2bKu1sv4E-kOkAGPbFflEjcJXSX2sTzilGz4KQ=:0"
-    },
-    {
-      "ep": 2,
-      "label": "Episodio 02",
-      "url": "https://TU-ACORTADOR.com/yyyyy"
-    }
-  ]
+<script>
+const params = new URLSearchParams(window.location.search);
+const slug = params.get("anime");
+
+if (!slug) {
+  document.body.innerHTML = "<h2 style='color:white'>No se especificó anime.</h2>";
 }
+
+const jsonURL = `https://raw.githubusercontent.com/colla06/data-animes/main/animes/${slug}.json`;
+
+fetch(jsonURL)
+  .then(res => res.json())
+  .then(data => {
+    renderPaste(data);
+  })
+  .catch(() => {
+    document.getElementById("episodes-container").innerHTML =
+      "<div style='color:#ff6b6b'>No se pudo cargar el JSON.</div>";
+  });
+
+function renderPaste(data) {
+
+  document.getElementById("anime-title").innerText = data.title;
+  document.getElementById("vip-btn").href = data.vip_folder;
+
+  if (!data.free || data.free.length === 0) {
+    document.getElementById("episodes-container").innerHTML =
+      "<div style='color:#ff6b6b'>No hay episodios FREE definidos.</div>";
+    return;
+  }
+
+  let html = "";
+
+  data.free.forEach(ep => {
+    html += `
+      <div class="episode-row">
+        <div class="ep-num">Ep ${ep.ep}</div>
+        <div class="ep-actions">
+          <a href="${ep.url}" target="_blank" class="btn-download">Descargar</a>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById("episodes-container").innerHTML = html;
+}
+</script>

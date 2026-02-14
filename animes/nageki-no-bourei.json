@@ -1,13 +1,17 @@
 {
-  "title": "Nombre del contenido",
-  "cover": "https://example.com/cover.jpg",
-  "meta": { "quality": "1080p", "format": "MKV", "audio": "JP" },
-  "vip": { "label": "VIP (Carpeta completa)", "url": "https://example.com/vip/" },
+  "title": "Nageki No Bourei Wa Intai Shitai",
+  "vip": {
+    "label": "VIP (Carpeta completa)",
+    "url": "https://ddl.aysdo.xyz/FHD/Nageki%20no%20Bourei%20wa%20Intai%20shitai/Temporada%201"
+  },
   "free": {
     "label": "FREE (Capítulos)",
     "episodes": [
-      { "n": 1, "url": "https://example.com/ep-1" },
-      { "n": 2, "url": "https://example.com/ep-2" }
+      { "n": 1, "url": "https://ddl.aysdo.xyz/d/FHD/Nageki%20no%20Bourei%20wa%20Intai%20shitai/Temporada%201/%5BAySDO%5D%20Nageki%20no%20Bourei%20wa%20Intai%20shitai%20-%2001%20%5BBD%201080p%20AV1%5D.mkv?sign=..." },
+      { "n": 2, "url": "https://TU-ACORTADOR.com/yyyyy" }
     ]
-  }
+  },
+
+  "cover": "https://cdn-eu.anidb.net/images/main/308286.jpg",
+  "meta": { "quality": "1080p", "format": "MKV (AV1)", "audio": "Japonés", "episodes": 13 }
 }
